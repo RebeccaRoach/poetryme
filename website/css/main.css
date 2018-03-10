@@ -1,0 +1,19 @@
+#nextPoem{
+  min-width:120px;
+  cursor:pointer;
+  border:2px solid #e6e6e6;
+ 
+}
+
+#previousPoem{
+  min-width:120px;
+  cursor:pointer;
+  border:2px solid #e6e6e6;
+ 
+}
+
+footer{
+	background-color: 'grey';
+	text-align: center;
+	margin-top: 10px;
+}

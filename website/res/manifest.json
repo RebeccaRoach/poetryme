@@ -1,0 +1,21 @@
+{
+  "name": "PoetryMe",
+  "short_name": "poetryme",
+  "start_url": "https://poetryme.com",
+
+  "display": "standalone",
+  "background_color": "#AF7AC5",
+  "theme_color": "#AF7AC5",
+  "description": "Curated Poetry. Just for you.",
+
+  "icons": [
+    {
+      "src": "assets/icons/size.png",
+      "sizes": "sizexsize",
+      "type": "image/png"
+    }
+  ],
+
+  "serviceWorker": "sw.js"
+
+}
