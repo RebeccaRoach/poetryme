@@ -66,6 +66,7 @@ with open("Pilot Analysis - Sheet1.csv", 'r') as poem_file:
 
 			else:
 				print('huh?')
+				print(entry)
 				#entry = new_entry
 
 		if len(entry)==8: # both titles were split
@@ -104,9 +105,9 @@ plt.ylabel("reader rankings")
 # now lets look at individuals
 pilots = [poem_scores[i][0] for i in range(len(poem_scores))] 
 pilot_set = list(set(pilots))
-markers = ['b.','kx','co','+','d','h','^','>','<','v','*','s','p']
-pilot_markers = {pilot_set[i]:markers[i] for i in range(len(pilot_set))}
-print(pilot_markers)
+#markers = ['b.','kx','co','+','d','h','^','>','<','v','*','s','p']
+#pilot_markers = {pilot_set[i]:markers[i] for i in range(len(pilot_set))}
+#print(pilot_markers)
 
 plt.figure()
 index = 1
@@ -116,10 +117,10 @@ for pilot in pilot_set:
 	rankings = [float(a[i][5]) for i in range(len(a))]
 	pearson_product_moment = np.corrcoef(similarity, rankings)
 	r2 = pearson_product_moment[0,1]
-	plt.subplot(2,4,index)
+	plt.subplot(3,5,index)
 	plt.plot(similarity, rankings, 'x')
 		
-	plt.title("correlation %0.3f" %r2)
+	plt.title("%s  %0.3f" %(pilot,r2))
 	plt.xlabel("similarity to base poem")
 	plt.ylabel("reader rankings")
 	index += 1
@@ -127,6 +128,6 @@ for pilot in pilot_set:
 
 '''
 '''
-plt.subplots_adjust(hspace=0.4)
+plt.subplots_adjust(hspace=0.5)
 #plt.tight_layout()
 plt.show()
